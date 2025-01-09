@@ -1,9 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   box-sizing: border-box;
-  font-family: "Lato", sans-serif;
 }
 
 html {
@@ -18,28 +21,6 @@ html {
   animation-duration: 0.2s;
 }
 
-/* body {
-    background-image: url('batik.jpg');
-    background-size: auto;
-    background-position: center;
-    min-height: 100vh;
-    color : white;
-    position: cover;
-    isolation: isolate;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    z-index : -1;
-    background: black;
-    inset: 0;
-    opacity: .7;
-} */
-body {
-  background-color: rgb(218, 160, 109);
-}
-
 header {
   position: relative;
   padding: 1em;
@@ -49,33 +30,38 @@ header {
   align-items: center;
   background-color: rgb(0, 0, 0);
   transition: 0.3s;
+  z-index: 999;
 }
-
-.logo {
+header .logo {
   display: grid;
   grid-template-columns: 25% 75%;
   place-items: center;
   float: left;
-  /* border: 2px solid red; */
 }
-
-header img {
+header .logo img {
   height: 36px;
-  /* padding: 8px; */
-  /* border: 1px solid yellow; */
 }
-
 header h1 {
-  /* align-self: flex-start; */
   display: block;
   text-transform: uppercase;
   color: white;
 }
-
-nav {
+header a {
+  color: white;
+  text-decoration: none;
+}
+header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+header nav .toogle-menu {
+  position: absolute;
+  width: 15px;
+  height: 100%;
+  z-index: 3;
+  cursor: pointer;
+  opacity: 0;
 }
 
 .dropdown {
@@ -84,7 +70,6 @@ nav {
   display: None;
   background-color: rgb(32, 32, 32);
 }
-
 .dropdown li {
   display: block;
   padding: 0.4em;
@@ -101,18 +86,15 @@ nav {
   align-items: center;
   transition: 0.5s;
 }
-
 .menu li {
   list-style-type: none;
 }
-
 .menu li a {
   display: block;
   padding: 10px 20px;
   text-decoration: none;
   color: white;
 }
-
 .menu li a:hover {
   box-shadow: 0 -2px 0px white inset;
   transition: 0.3s linear;
@@ -120,15 +102,6 @@ nav {
 
 .dropdown {
   display: invisible;
-}
-
-.toogle-menu {
-  position: absolute;
-  width: 15px;
-  height: 100%;
-  z-index: 3;
-  cursor: pointer;
-  opacity: 0;
 }
 
 .hamburger, .toogle-menu {
