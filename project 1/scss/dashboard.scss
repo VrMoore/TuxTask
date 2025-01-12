@@ -1,0 +1,94 @@
+main {
+    box-sizing: border-box;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 1em;
+    padding: .5em;
+}
+
+aside {
+
+    .notes_list {
+
+        h3 {
+            font-size: 1.4em;
+            font-weight: 560;
+        }
+
+        .add_btn {
+            color: white;
+            width: 100%;
+            border: none;
+            margin-top: 1em;
+            border-radius: 10px;
+            background-color: purple;
+            display: grid;
+            grid-template-columns: 30% 70%;
+            padding: .6em;
+            place-items: center;
+            cursor: pointer;
+
+            i {
+                border-radius: 20%;
+                padding: 8px;
+            }
+
+            p {
+                font-weight: 500;
+            }
+
+        }
+        
+        .add_btn:hover {
+            border-bottom: 4px solid black;
+            transition: .2s all linear;
+        }
+        .add_btn:hover:after {
+            outline: none;
+            transition: .5s all ease;
+        }
+    }
+}
+
+article {
+    padding: .8em;
+    height: 100vh;
+    overflow: hidden;
+    border: 2px solid blue;
+
+    h1 {
+        padding: 10px 10px 10px 0;
+        border-bottom: 2px solid black;
+        margin-bottom: .5em;
+    }
+
+    section {
+        height: inherit;;
+        text-align: justify;
+
+        textarea {
+            width: 100%;
+            height: 100%;
+            font-weight: 400;
+            resize: none;
+            border: none;
+        }
+
+        textarea:focus{
+            outline: none;
+        }
+
+        input {
+            padding: .8em .8em .4em 0;
+            margin-bottom: .7em;
+            font-weight: 500;
+            width: 100%;
+            border: none;
+        }
+
+        input:focus {
+            outline: none;
+        }
+    }
+}

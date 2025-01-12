@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="../images/dummy logo.svg" type="image/x-icon">
     <title>My Dashboard</title>
@@ -23,5 +24,26 @@
             </ul>
         </nav>
     </header>
+    <main>
+        <aside>
+            <div class="notes_list">
+                <h3>My Notes</h3>
+                <button class="add_btn" type="button">
+                    <i id="add_btn"  class="fa-solid fa-plus"></i>
+                    <p>Add Notes</p>
+                </button>
+            </div>
+            <!-- <div class="tools"></div>
+            <div class="malcs"></div> -->
+        </aside>
+        <article>
+            <h1>My Notes</h1>
+            <section>
+                <input type="text" id="notes_title" placeholder="New Title">
+                <textarea id="notes_body" placeholder="add text...."></textarea>
+            </section>
+        </article>
+    </main>
+    <script src="../js/main.js" type="module"></script>
 </body>
 </html>
