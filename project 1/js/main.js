@@ -1,13 +1,14 @@
 import StorageAPI from "../js/storage.js"
-import NoteViews from "../js/noteView.jss"
+import NoteViews from "../js/noteView.js"
 
 
-// StorageAPI.saveNotes({
-//     id : 206,
-//     title : "Test 2",
-//     body : "Hello World 2"
-// });
 
-const app = document.getElementById()
+const app = document.getElementById('app');
+const view = new NoteViews(app, {
+    noteAdd() {
+        console.log('note has been selected');
+    }
+});
 
-console.log(StorageAPI.getAllNotes())
+
+console.log(StorageAPI.getAllNotes());

@@ -1,4 +1,4 @@
-main {
+.app {
     box-sizing: border-box;
     overflow: hidden;
     display: grid;
@@ -16,13 +16,15 @@ aside {
             font-weight: 560;
         }
 
-        .add_btn {
+        .notes_add {
             color: white;
             width: 100%;
             border: none;
             margin-top: 1em;
             border-radius: 10px;
             background-color: purple;
+            outline: none;
+            transition: .3s all ease-out;
             display: grid;
             grid-template-columns: 30% 70%;
             padding: .6em;
@@ -40,13 +42,11 @@ aside {
 
         }
         
-        .add_btn:hover {
-            border-bottom: 4px solid black;
+        .notes_add:hover {
+            outline: 2px solid black;
+            background-color: white;
+            color: black;
             transition: .2s all linear;
-        }
-        .add_btn:hover:after {
-            outline: none;
-            transition: .5s all ease;
         }
     }
 }
