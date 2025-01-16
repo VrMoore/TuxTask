@@ -7,32 +7,30 @@ export default class NotesView {
         this.noteDelete = noteDelete;
         this.root.innerHTML = `
             <aside>
-                <div class="notes_list">
-                    <h3>My Notes</h3>
-                    <button class="notes_add" type="button">
-                        <i id="add_btn" class="fa-solid fa-plus"></i>
-                        <p>Add Notes</p>
-                    </button>
-                </div>
+                <h3>My Notes</h3>
+                <button class="notes__add" type="button">
+                    <i id="add_btn" class="fa-solid fa-plus"></i>
+                    <p>Add Notes</p>
+                </button>
+                <div class="notes_list"></div>
             </aside>
             <article>
-                <input type="text" id="notes_title" placeholder="New Title" spellcheck="false"></input>
+                <input type="text" id="notes__title" placeholder="New Title" spellcheck="false"></input>
                 <section>
-                    <textarea class="notes_body" spellcheck="false">Add texts</textarea>
+                    <textarea class="notes__body" placeholder="add text...."  spellcheck="false"></textarea>
                 </section>
             </article>
         `;
 
-        const btnAddNote = this.root.querySelector(".notes_add");
-        const titleNotes = this.root.querySelector(".notes_title");
-        const bodyNotes = this.root.querySelector(".notes_body");
+        const btnAddNote = this.root.querySelector(".notes__add");
+        const titleNotes = this.root.querySelector(".notes__title");
+        const bodyNotes = this.root.querySelector(".notes__body");
 
         btnAddNote.addEventListener("click", () => {
             this.noteAdd();
         }); 
 
         if (titleNotes && bodyNotes) {
-
             [titleNotes, bodyNotes].forEach(inputField => {
                 inputField.addEventListener("blur", () => {
                     const updatedTitle = titleNotes.value.trim();
@@ -41,9 +39,7 @@ export default class NotesView {
                     this.noteEdit(updatedTitle, updatedBody);
                 });
             });
-        } else {
-            console.error("Error")
-        }
+        };
 
         console.log(this._createListItem(200, "Notes 1", "Lorem Ipsum dolor sit amet"))
 
@@ -64,4 +60,23 @@ export default class NotesView {
             </div>
         `;
     }
+
+    updateNoteList(notes) {
+        const notesList = this.root.querySelector(".notes_list");
+
+        notesList.innerHTML = "";
+
+        for (const note of notes) {
+            const html = this._createListItem(note.id, note.title, note.body);
+
+            notesList.insertAdjacentHTML('beforeend', html);
+        }
+
+        notesList.querySelectorAll(".note_list_items").forEach(noteListItem => {
+            noteListItem.addEventListener("click", () => {
+                this.noteSelect(noteListItem.dataset.noteId);
+            });
+        });
+    }
+
 };

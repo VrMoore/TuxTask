@@ -8,11 +8,13 @@ const view = new NoteViews(app, {
     noteAdd() {
         console.log("Let's add new notes");
     },
+    noteSelect(id) {
+        console.log("Let's select a note with id: ", id)
+    },
     noteEdit(newTitle, newBody) {
         console.log(newTitle);
         console.log(newBody);
     }
 });
 
-
-console.log(StorageAPI.getAllNotes());
+view.updateNoteList(StorageAPI.getAllNotes());
