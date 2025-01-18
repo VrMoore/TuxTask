@@ -35,20 +35,28 @@ aside .notes__add:hover {
   color: black;
   transition: 0.2s all linear;
 }
-aside h3 {
-  font-size: 1.4em;
+aside .my_notes_h3 {
+  font-size: 1.6em;
   font-weight: 560;
 }
 aside .notes_list {
-  background-color: tomato;
   display: grid;
   gap: 0.5em;
+  margin-top: 1.8em;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 aside .notes_list .notes_list_items {
-  background-color: #f1f1f1;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 0.6em;
+  background-color: gray;
+  padding: 1.3em;
+  border-radius: 15px;
+}
+aside .notes_list .notes_list_items h3 {
+  font-weight: 500;
+  font-size: 1.2em;
+}
+aside .notes_list .notes_list_items p {
+  font-size: 0.9em;
 }
 
 article {
