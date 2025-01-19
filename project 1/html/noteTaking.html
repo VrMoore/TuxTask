@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/noteTaking.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="../images/dummy logo.svg" type="image/x-icon">
     <title>My Dashboard</title>
@@ -25,32 +25,28 @@
         </nav>
     </header>
     <main>
-        <article>
-            <div class="welcome">
-                <h3>What Would You Like to do Today</h3>
-                <div class="lines"></div>
-            </div>
-            <div class="wrapper">
-                <div id="list_of_apps" class="box_one">
-                    <a href="/html/noteTaking.html">
-                        <i class="fa-solid fa-book-open" id="box"></i>
-                        <p>Note Taking</p>
-                    </a>
+        <div class="notes" id="app">
+            <!-- <aside>
+                <h2 class="my_notes_h3">My Notes</h2>
+                <button class="notes__add" type="button">
+                    <i id="add_btn" class="fa-solid fa-plus"></i>
+                    <p>Add Notes</p>
+                </button>
+                <div class="notes_list">
+                    <div class="notes_list_items" data-node-id="${id}">
+                        <h3 class="notes_small_title">Test4</h3>
+                        <p class="notes_small_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, nihil?</p>
+                    </div>
                 </div>
-                <div id="list_of_apps" class="box_two">
-                    <a href="/html/toDoList.html">
-                        <i class="fa-solid fa-list" id="box"></i>
-                        <p>To Do List</p>
-                    </a>
-                </div>
-                <div id="list_of_apps" class="box_three">
-                    <a href="#">
-                        <div id="box"></div>
-                        <p>Coming soon.</p>
-                    </a>
-                </div>
-            </div>
-        </article>
+            </aside>
+            <article>
+                <input type="text" id="notes__title" placeholder="New Title" spellcheck="false"></input>
+                <section>
+                    <textarea class="notes__body" placeholder="add text...."  spellcheck="false"></textarea>
+                </section>
+            </article> -->
+        </div>
     </main>
+    <script src="../js/main.js" type="module"></script>
 </body>
 </html>

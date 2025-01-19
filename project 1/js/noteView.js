@@ -7,7 +7,7 @@ export default class NotesView {
         this.noteDelete = noteDelete;
         this.root.innerHTML = `
             <aside>
-                <h3>My Notes</h3>
+                <h3 class="my_notes">My Notes</h3>
                 <button class="notes__add" type="button">
                     <i id="add_btn" class="fa-solid fa-plus"></i>
                     <p>Add Notes</p>
@@ -15,7 +15,7 @@ export default class NotesView {
                 <div class="notes_list"></div>
             </aside>
             <article class="notes__preview">
-                <input type="text" id="notes__title" placeholder="New Title" spellcheck="false"></input>
+                <input type="text" class="notes__title" placeholder="New Title" spellcheck="false"></input>
                 <section>
                     <textarea class="notes__body" placeholder="add text...."  spellcheck="false"></textarea>
                 </section>
@@ -95,6 +95,11 @@ export default class NotesView {
     updateActiveNote(note) {
         this.root.querySelector(".notes__title").value = note.title;
         this.root.querySelector(".notes__body").value = note.body;
+
+        if (!note.title || !note.body) {
+            console.log("Notes is empty");
+            return;
+        }
 
         this.root.querySelectorAll(".notes_list_items").forEach(noteListItem => {
             noteListItem.classList.remove("notes_list_items--selected");

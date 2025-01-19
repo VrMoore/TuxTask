@@ -1,111 +1,69 @@
-.app {
+article {
+    display: grid;
+    grid-template-rows: 25% 75%;
     box-sizing: border-box;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 25% 75%;
-    gap: 1em;
-    padding: .5em;
-}
+    min-height: 100vh;
 
-aside {
-    .notes__add {
-        color: white;
-        width: 100%;
-        border: none;
-        margin-top: 1em;
-        border-radius: 10px;
-        background-color: purple;
-        outline: none;
-        transition: .3s all ease-out;
-        display: grid;
-        grid-template-columns: 30% 70%;
+    .welcome {
+        align-self: center;
+        text-align: center;
         padding: .6em;
-        place-items: center;
-        cursor: pointer;
-    
-        i {
-            border-radius: 20%;
-            padding: 8px;
-        }
-    
-        p {
+        h3 {
+            text-transform: uppercase;
             font-weight: 500;
+            font-size: 1.4em;
         }
-    
-    }
-    
-    .notes__add:hover {
-        outline: 2px solid black;
-        background-color: white;
-        color: black;
-        transition: .2s all linear;
-    }
-
-    .my_notes_h3 {
-        font-size: 1.6em;
-        font-weight: 560;
-    }
-
-    .notes_list {
-        display: grid;
-        gap: .5em;
-        margin-top: 1.8em;
-        height: fit-content;
-
-        .notes_list_items {
-            background-color: gray;
-            padding: 1.3em;
-            border-radius: 15px;
-
-            h3 {
-                font-weight: 500;
-                font-size: 1.2em;
-            }
-
-            p {
-                font-size: .9em;
-            }
+        .lines {
+            border: 2px solid black;
+            width: 30%;
+            justify-self: center;
+            margin: .4em;
         }
     }
-    
-    
+
 }
 
-article {
-    padding: .8em;
-    height: 100vh;
-    overflow: hidden;
-    border: 2px solid blue;
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 1em;
+    padding: 1em;
+    text-align: center;
 
-    input {
-        font-size: 2.5em;
-        margin-bottom: .5em;
-        padding: .8em .8em .4em 0;
-        margin-bottom: .7em;
-        font-weight: 600;
+    #list_of_apps {
         width: 100%;
-        border: none;
-    }
-
-    input:focus {
-        outline: none;
-    }
-
-    section {
-        height: inherit;;
-        text-align: justify;
-
-        textarea {
-            width: 100%;
+        height: 60%;
+        border: 2px solid black;
+        background-color: purple;
+        border-radius: 15px;
+        
+        a {
+            margin: auto;
             height: 100%;
-            font-size: 1em;
-            font-weight: 400;
-            resize: none;
-            border: none;
-        }
-
-        textarea:focus{
-            outline: none;
+            display: grid ;
+            grid-template-rows: 70% 35%;
+            padding: .4em;
+            text-decoration: none;
+            #box {
+                border-radius: 15px;
+                background-color: white;
+                color: black;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 4em;
+            }
+            p {
+                color: white;
+                height: 100%;
+                padding: .6em;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
         }
 
     }

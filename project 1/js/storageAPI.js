@@ -24,7 +24,7 @@ export default class StorageAPI {
         const notes = StorageAPI.getAllNotes();
         const newNotes = notes.filter(note => note.id != id);
 
-        localStorage.setItem('tuxtask-notes', JSON.stringify(notes))
+        localStorage.setItem('tuxtask-notes', JSON.stringify(newNotes))
     }
 
     
