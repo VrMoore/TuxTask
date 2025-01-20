@@ -7,8 +7,10 @@
 }
 
 aside {
+  height: 100vh;
   padding: 0.8em;
   border-right: 2px solid black;
+  overflow-y: auto;
 }
 aside .my_notes {
   font-weight: 500;
