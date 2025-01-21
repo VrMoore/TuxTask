@@ -1,0 +1,69 @@
+main {
+  display: grid;
+  grid-template-rows: 15% 85%;
+  background-color: tomato;
+  height: 100vh;
+}
+main h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2.5em;
+  place-self: center;
+}
+
+article {
+  background-color: blue;
+}
+article .wrapper {
+  background-color: lightgreen;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0 0.8em 0.8em 0.8em;
+}
+article .wrapper .input_field {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+}
+article .wrapper .input_field input {
+  padding: 0.9em;
+  border: 2px solid white;
+  outline: none;
+  border: 2px solid black;
+}
+article .wrapper .input_field i {
+  padding: 0.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  cursor: pointer;
+  background-color: purple;
+}
+article .wrapper .content_list {
+  background-color: white;
+  list-style: none;
+  padding: 0.5em;
+}
+article .wrapper .content_list li {
+  padding: 0.4em;
+  display: grid;
+  grid-template-columns: 94% 6%;
+  border-radius: 6px;
+}
+article .wrapper .content_list li i {
+  color: red;
+  transition: 0.3s all ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+article .wrapper .content_list li i:hover {
+  rotate: 90deg;
+  transition: 0.4s all ease;
+}/*# sourceMappingURL=toDoList.css.map */
