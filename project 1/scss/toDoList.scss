@@ -43,6 +43,12 @@ article {
                 border: 2px solid black;
                 cursor: pointer;
                 background-color: purple;
+                transition: .2s all ease;
+            }
+
+            i:hover {
+                background-color: white;
+                transition: .4s all ease;
             }
         }
 
@@ -54,8 +60,14 @@ article {
             li {
                 padding: .4em;
                 display: grid;
-                grid-template-columns: 94% 6%;
+                grid-template-columns: 4% 90% 6%;
                 border-radius: 6px;
+
+                #check {
+                    background-color: red;
+                    color: white;
+                    padding: .5em;
+                }
 
                 i {
                     color: red;
@@ -64,11 +76,13 @@ article {
                     align-items: center;
                     justify-content: center;
                 }
+            }
 
-                i:hover {
-                    rotate: 90deg;
-                    transition: .4s all ease;
-                }
+            li:hover {
+                background-color: red;
+                color: white;
+                transition: .4s all ease;
+                cursor: pointer;
             }
         }
     }

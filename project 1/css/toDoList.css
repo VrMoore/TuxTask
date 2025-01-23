@@ -44,6 +44,11 @@ article .wrapper .input_field i {
   border: 2px solid black;
   cursor: pointer;
   background-color: purple;
+  transition: 0.2s all ease;
+}
+article .wrapper .input_field i:hover {
+  background-color: white;
+  transition: 0.4s all ease;
 }
 article .wrapper .content_list {
   background-color: white;
@@ -53,8 +58,13 @@ article .wrapper .content_list {
 article .wrapper .content_list li {
   padding: 0.4em;
   display: grid;
-  grid-template-columns: 94% 6%;
+  grid-template-columns: 4% 90% 6%;
   border-radius: 6px;
+}
+article .wrapper .content_list li #check {
+  background-color: red;
+  color: white;
+  padding: 0.5em;
 }
 article .wrapper .content_list li i {
   color: red;
@@ -63,7 +73,9 @@ article .wrapper .content_list li i {
   align-items: center;
   justify-content: center;
 }
-article .wrapper .content_list li i:hover {
-  rotate: 90deg;
+article .wrapper .content_list li:hover {
+  background-color: red;
+  color: white;
   transition: 0.4s all ease;
+  cursor: pointer;
 }/*# sourceMappingURL=toDoList.css.map */
