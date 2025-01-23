@@ -17,7 +17,7 @@ listItemsElement.forEach(item => {
     });
 });
 
-const addBtn = document.getElementById('add_btn');
+const addBtn = document.getElementById('input_button');
 const inputBox = document.getElementById('input_task');
 
 console.log(inputBox);
@@ -27,15 +27,20 @@ function addTask() {
     
     addBtn.addEventListener('click', () => {
         let li = document.createElement("li");
-        li.classList.add('items_list');
-        li.innerHMTL = `
-            <input type="checkbox" id="check">
-            <p>${inputBox}</p>
-            <i id="cross" class="fa-solid fa-xmark"></i>
-        `;
+        li.classList.add('lists_items');
+        li.createListItem = createListItem(inputBox)
 
         listItems.appendChild(li);
+        console.log(li)
     })
 }
+
+function createListItem(inputBox) {
+    return `
+        <input type="checkbox" id="check">
+        <p>${inputBox.value}</p>
+        <i id="cross" class="fa-solid fa-xmark"></i>
+    `;
+};
 
 addTask();
