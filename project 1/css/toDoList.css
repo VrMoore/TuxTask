@@ -64,7 +64,7 @@ article .wrapper .content_list li {
 article .wrapper .content_list li #check {
   background-color: red;
   color: white;
-  padding: 0.5em;
+  scale: 0.8;
 }
 article .wrapper .content_list li i {
   color: red;
