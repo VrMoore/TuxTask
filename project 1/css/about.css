@@ -16,7 +16,7 @@ main .dev_cards {
   padding: 14px;
   background-color: white;
   border-radius: 1em;
-  box-shadow: 6px 6px 10px black;
+  box-shadow: 6px 6px black;
 }
 main .dev_cards img {
   grid-row: span 2;

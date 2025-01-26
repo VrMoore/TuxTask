@@ -1,22 +1,24 @@
 const listItems = document.getElementById('content_list');
-const listItemsElement = Array.from(listItems.children);
 
-listItemsElement.forEach(item => {
-    const crossX = item.querySelector("#cross");
+function listAction(myList) {
+    myList.forEach(item => {
+        const crossX = item.querySelector("#cross");
+        
+        item.addEventListener('mouseenter', () => {
+            crossX.style.color = "white";
+            crossX.style.transform = 'rotate(90deg)';
+            crossX.style.transition = '.5s all ease';
+        });
     
-    item.addEventListener('mouseenter', () => {
-        crossX.style.color = "white";
-        crossX.style.transform = 'rotate(90deg)';
-        crossX.style.transition = '.5s all ease';
+        item.addEventListener('mouseleave', () => {
+            crossX.style.color = "";
+            crossX.style.transform = '';
+            crossX.style.transition = '.5s all ease';
+        });
+    
     });
-
-    item.addEventListener('mouseleave', () => {
-        crossX.style.color = "";
-        crossX.style.transform = '';
-        crossX.style.transition = '.5s all ease';
-    });
-
-});
+        
+}
 
 const addBtn = document.getElementById('input_button');
 const inputBox = document.getElementById('input_task');
@@ -30,7 +32,6 @@ function addTask() {
         createListItem(inputBox, li);
 
         listItems.appendChild(li);
-        console.log(li)
     });
 
     inputBox.value = "";
@@ -66,14 +67,17 @@ function createListItem(inputBox, li) {
         saveToLocal();
     })
 
+    const listItemsElement = Array.from(listItems.children);
+    listAction(listItemsElement);
+
 };
 
 function saveToLocal() {
-    const localData = [];
+    let localData = [];
     const listItemsContent = document.querySelectorAll(".items_list")
-
+    
     listItemsContent.forEach(item => {
-        const checkbox = item.querySelector('.check');
+        const checkbox = item.querySelector('#check');
         const desc = item.querySelector('.desc');
 
         localData.push({
@@ -81,8 +85,18 @@ function saveToLocal() {
             checked : checkbox.checked
         })
     })
+    
+    localStorage.setItem('taskListData', JSON.stringify(localData));
 
-    localStorage.setItem('task list data', JSON.stringify(localData))
+}
+
+function showTask() {
+    listItems.innerHTML = localStorage.getItem('taskListData')
 }
 
 addTask();
+// saveToLocal();
+
+
+// const saved = JSON.parse(localStorage.getItem('taskListData'))
+// console.log(saved, 'saved from local')
