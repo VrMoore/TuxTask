@@ -1,11 +1,14 @@
 article {
   display: grid;
-  grid-template-rows: 25% 75%;
+  grid-template-rows: 25vh 75vh;
+  grid-template-areas: "Welcome" "Content";
   box-sizing: border-box;
-  overflow: hidden;
-  min-height: 100vh;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
 }
 article .welcome {
+  grid-area: "Welcome";
+  height: 100%;
   align-self: center;
   text-align: center;
   padding: 0.6em;
@@ -23,8 +26,10 @@ article .welcome .lines {
 }
 
 .wrapper {
+  grid-area: "Content";
+  height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   place-items: center;
   gap: 1em;
   padding: 1em;
@@ -37,6 +42,7 @@ article .welcome .lines {
   background-color: purple;
   box-shadow: 6px 6px black;
   border-radius: 15px;
+  transition: 350ms all ease-in-out;
 }
 .wrapper #list_of_apps a {
   margin: auto;
@@ -64,19 +70,29 @@ article .welcome .lines {
   text-transform: uppercase;
   font-weight: 500;
 }
+.wrapper #list_of_apps:hover {
+  transform: translateY(-20px);
+  transition: 250ms all ease-in-out;
+}
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 682px) {
+  article {
+    grid-template-rows: 10vh 90vh;
+  }
   .wrapper {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
   }
   #list_of_apps {
     height: 100% !important;
-    width: 75% !important;
+    width: 60% !important;
   }
 }
-@media screen and (700px < width < 982px) {
+@media screen and (682px < width < 982px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
   #list_of_apps {
-    width: 85% !important;
+    width: 75% !important;
   }
 }/*# sourceMappingURL=dashboard.css.map */

@@ -29,7 +29,7 @@ article .wrapper .input_field {
   margin-top: 0.5em;
   background-color: white;
   display: grid;
-  grid-template-columns: 90% 10%;
+  grid-template-columns: 85% 15%;
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -50,12 +50,18 @@ article .wrapper .input_field i {
   justify-content: center;
   cursor: pointer;
   background-color: purple;
+  border-left: 2px solid transparent;
   transition: 0.5s all ease;
 }
 article .wrapper .input_field i:hover {
   background-color: white;
-  outline: 2px solid black;
+  border-left: 2px solid black;
   transition: 0.4s all ease;
+}
+@media screen and (width < 540px) {
+  article .wrapper .input_field {
+    grid-template-columns: 85% 15%;
+  }
 }
 article .wrapper .content_list {
   height: -moz-fit-content;
@@ -69,7 +75,7 @@ article .wrapper .content_list li {
   grid-template-columns: 4% 90% 6%;
   border-radius: 6px;
 }
-article .wrapper .content_list li #check[type=checkbox] {
+article .wrapper .content_list li .check[type=checkbox] {
   scale: 0.8;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -83,7 +89,7 @@ article .wrapper .content_list li #check[type=checkbox] {
   display: grid;
   place-content: center;
 }
-article .wrapper .content_list li #check[type=checkbox]::before {
+article .wrapper .content_list li .check[type=checkbox]::before {
   content: "";
   width: 0.7em;
   height: 0.7em;
@@ -92,10 +98,10 @@ article .wrapper .content_list li #check[type=checkbox]::before {
   -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
           clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
-article .wrapper .content_list li #check[type=checkbox]:checked::before {
+article .wrapper .content_list li .check[type=checkbox]:checked::before {
   transform: scale(1);
 }
-article .wrapper .content_list li #check:checked + .desc {
+article .wrapper .content_list li .check:checked + .desc {
   text-decoration: line-through;
   color: grey;
   font-style: italic;
